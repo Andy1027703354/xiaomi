@@ -19,7 +19,7 @@
                 <h1>注册小米帐号</h1>
             </div>
             <div class="form">
-                <form action="" class="form_wrap">
+                <form action="post" class="form_wrap">
                     <div class="gd">
                         <p>国家/地区</p>
                         <p class="clearfix"><input placeholder="中国" type="text"><button></button></p>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="phone">
                         <p>手机号码</p>
-                        <p class="clearfix"><button>+86</button> <input placeholder="请输入手机号码" type="text"></p>
+                        <p class="clearfix"><button>+86</button> <input placeholder="请输入手机号码" type="text" name="phone"></p>
                         <p class="ne"><img class="w_img" src="images/login/w.jpg" alt=""> 请输入手机号码</p>
                     </div>
                     <input class="ze" type="button" value="立即注册">
@@ -42,6 +42,30 @@
             </p>
             <p>小米公司版权所有-京ICP备10046444- <img src="images/login/ghs.png" alt=""> 京公网安备11010802020134号-京ICP证110507号</p>
     </div>
+    <script src="js/ajax.js"></script>
+    <script>
+           var $form_wrap = document.querySelector('.form_wrap');
+           var $ze = document.querySelector('.ze');
+           $ze.onclick = function(e){
+               e = e || event;
+               e.preventDefault();
+               sendAjax('php/login.php',{
+                   type:'POST',
+                   data:{
+                       phone:$form_wrap['phone'].value
+                   },
+                   success(data){
+                       console.log(data);
+                       let {code,msg} = JSON.parse(data);
+                       if(code == 200){
+                        //    locatlon.href = 'xxx.html'
+                       }else{
+                           alert(msg);
+                       }
+                   }
+               })
+           }
+    </script>
 </body>
 
 </html>

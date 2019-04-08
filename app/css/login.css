@@ -1,7 +1,12 @@
 #wrapper{
     width:786px;
     height:561px;
-    margin:0 auto;
+    position:absolute;
+    left:0;
+    right:0;
+    top:-80px;
+    bottom:0;
+    margin:auto;
     padding:0 34px;
     background:#fff;
 }
@@ -105,6 +110,9 @@
     top:4px;
 }
 .foo{
+    position:absolute;
+    bottom:0;
+    width:100%;
     text-align:center;
 }
 .foo p{
