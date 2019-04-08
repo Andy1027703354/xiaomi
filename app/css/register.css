@@ -1,0 +1,180 @@
+/* 版心 */
+.content{
+    width:1130px;
+    margin:0 auto;
+}
+html,body{
+    background:#fff;
+}
+/* 头部logo */
+.header{
+    height:98px;
+}
+.header .logo h1 a{
+    width:200px;
+    height:98px;
+    display:block;
+    background:url(../images/register/xmlogo.png) no-repeat;
+}
+/* 登录表单 */
+.regForm{
+    width:410px;
+    height:494px;
+    border:1px solid #000;
+    float:right;
+    padding-top:30px;
+}
+.regForm .tabs{
+    text-align:center;
+    margin-bottom:24px;
+}
+.regForm .tabs a{
+    font-size:24px;
+}
+.regForm .tabs a:nth-child(1){
+    color:#f56600;
+}
+.regForm .tabs span:nth-child(2){
+    display:inline-block;
+    width:2px;
+    height:29px;
+    background:#e0e0e0;
+    position:relative;
+    top:5px;
+    margin:0 42px;
+}
+.regForm .regInp{
+    text-align:center;
+}
+.regForm .regInp input{
+    width:332px;
+    height:48px;
+    border:#e0e0e0 solid 1px;
+    margin-top:14px;
+    padding-left:14px;
+    font-size:14px;
+}
+.regForm .regInp .btn{
+    width:347px;
+    height:49px;
+    background:#ff6700;
+    border:none;
+    color:#fff;
+    margin-top:24px;
+    margin-bottom:5px;
+    padding:0;
+}
+.regInp p:nth-child(4) span:nth-child(1){
+    float:left;
+    margin-left:30px;
+}
+.regInp p:nth-child(4) span:nth-child(1) a{
+    color:#ff6700;
+}
+.regInp p:nth-child(4) span:nth-child(2){
+    float:right;
+    margin-right:30px;
+}
+.fie{
+    padding:0 30px;
+    margin-top:126px;
+}
+.tit{
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;  
+}
+.oth{
+    font-size: 14px;
+    color: #bbb;
+    margin: 0 auto;
+    text-align: center;
+}
+.fie ul{
+    display:flex;
+    justify-content:center;
+}
+.fie .icons_type{
+    background:url(../images/register/icons_type.png) no-repeat;
+}
+.fie ul li{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    background:green;
+    margin:0 16px;
+}
+.fie ul li a{
+    display:flex;
+    width:32px;
+    height:32px;
+    justify-content:center;
+    align-items:center;
+}
+.fie ul li:nth-child(1) i{
+    display:block;
+    width:14px;
+    height:15px;
+    background-position:-21px -2px;
+}
+.fie ul li:nth-child(2) i{
+    display:block;
+    width:18px;
+    height:15px;
+    background-position:-38px -2px;
+}
+.fie ul li:nth-child(3) i{
+    display:block;
+    width:25px;
+    height:17px;
+    background-position:-57px 0px;
+}
+.fie ul li:nth-child(4) i{
+    display:block;
+    width:23px;
+    height:18px;
+    background-position:-84px 0px;
+}
+.fie ul li:nth-child(1){
+    background:#0288d1;
+}
+.fie ul li:nth-child(2){
+    background:#d32f2f;
+}
+.fie ul li:nth-child(3){
+    background:#00aaee;
+}
+.fie ul li:nth-child(4){
+    background:#00d20d;
+}
+/* 扫码登录 */
+.saoma {
+    text-align:center;
+    display:none;
+}
+.saoma .ewm{
+    width:180px;
+    height:180px;
+    margin-top:50px;
+}
+.saoma p{
+    font-size:14px;
+    color:#777;
+}
+.saoma p:nth-child(2) span{
+    color:#ff6700;
+}
+.saoma p:nth-child(2){
+    margin-top:5px;
+}
+/* 底部 */
+footer{
+    margin-top:100px;
+}
+footer p{
+    text-align:center;
+    line-height:36px;
+    color:#757575;
+}
+footer p:nth-child(2){
+    margin-bottom:20px;
+}

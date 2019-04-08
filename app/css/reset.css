@@ -1,5 +1,5 @@
 /*css reset*/
-body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select,button{margin:0;padding:0}
+html, body, h1, h2, h3, h4, h5, h6, blockquote, p, pre, dl, dd, ol, ul, li, a, span, caption, th, td, form, fieldset, legend, input, button, textarea, address{margin:0;padding:0}
 body,html{
 	font:12px "微软雅黑" Arial;
 	color:#cdcac8;	
@@ -11,7 +11,7 @@ li{
 }
 a{
 	text-decoration:none;
-	color:#fff;
+	color:#333;
 	font-size:12px;	
 }
 
@@ -33,7 +33,7 @@ input{
 	overflow:hidden;
 	visibility:hidden;	
 }
-img{
+fieldset, img{
 	border:0;
 	}
 
