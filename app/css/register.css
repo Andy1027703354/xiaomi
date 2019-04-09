@@ -22,20 +22,19 @@ html,body{
     position:relative;
 }
 .banner .img{
-    width:2000px;
     height:588px;
 }
-.register{
+/* .register{
     position:absolute;
     top:162px;
     right:615px;
-}
+} */
 /* 登录表单 */
 .regForm{
     width:410px;
     height:494px;
     /* border:1px solid #000; */
-    float:right;
+    margin:0 auto;
     padding-top:30px;
     background:#fff;
 }

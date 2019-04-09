@@ -8,6 +8,9 @@
 .jlt{
     background:url(../images/index/jlt.png) no-repeat;
 }
+.icon-slides{
+    background:url(../images/index/icon-slides.png) no-repeat;
+}
 /* 右侧悬浮栏 */
 .suspend{
     position:absolute;
@@ -210,6 +213,42 @@
 }
 .slideshow ol:nth-child(2) .f08{
     background:rgba(255,255,255,0.8);
+}
+.slideshow .show_left{
+    position: absolute;
+    top: 50%;
+    z-index: 999;
+    width: 41px;
+    height: 69px;
+    margin-top: -35px;
+    text-indent: -9999px;
+    overflow: hidden;
+    outline: 0;
+    left:234px;
+    background-position:-84px 50%;
+    outline:none;
+    border:none;
+}
+.slideshow .show_left:hover{
+    background-position:0 0; 
+}
+.slideshow .show_right{
+    position: absolute;
+    top: 50%;
+    z-index: 999;
+    width: 41px;
+    height: 69px;
+    margin-top: -35px;
+    text-indent: -9999px;
+    overflow: hidden;
+    outline: 0;
+    right:0;
+    background-position:-125px 50%;
+    outline:none;
+    border:none;
+}
+.slideshow .show_right:hover{
+    background-position:-41px 0;
 }
 /* 轮播图的下面 */
 .home_hero{

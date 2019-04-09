@@ -1,16 +1,18 @@
 #wrapper{
-    width:786px;
-    height:561px;
+    width:852px;
+    height:800px;
+    position:relative;
+    padding:0 34px;
+    background:#fff;
+    margin:0 auto;
+}
+.wrap{
     position:absolute;
     left:0;
     right:0;
-    top:-80px;
+    top:0;
     bottom:0;
     margin:auto;
-    padding:0 34px;
-    background:#fff;
-}
-.wrap{
     height:100%;
 }
 .hea{
@@ -51,6 +53,26 @@
 }
 .gd .che{
     margin-top:5px;
+}
+.user input{
+    width:320px;
+    height:40px;
+    border:1px solid #e8e8e8;
+    padding-left:10px;
+}
+.user .hei{
+    color:#666;
+    margin-top:5px;
+    margin-bottom:5px;
+    font-size:14px;
+}
+.user .red{
+    color:red;
+    font-size:14px;
+    display:none;
+}
+.user .none-1{
+    /* display:block; */
 }
 .phone{
     margin-top:16px;
@@ -110,8 +132,6 @@
     top:4px;
 }
 .foo{
-    position:absolute;
-    bottom:0;
     width:100%;
     text-align:center;
 }

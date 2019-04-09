@@ -25,6 +25,17 @@
                         <p class="clearfix"><input placeholder="中国" type="text"><button></button></p>
                         <p class="che">成功注册帐号后，国家/地区将不能被修改</p>
                     </div>
+                    <div class="user">
+                        <p class="hei">用 户 名</p>
+                        <input type="text" name="username">
+                        <p class="red none-1">用户名不合法</p>
+                        <p class="hei">密    码</p>
+                        <input type="password" name="pwd">
+                        <p class="red none-2">密码不合法</p>
+                        <p class="hei">确认密码</p>
+                        <input type="password" name="affirmpwd">
+                        <p class="red none-3">密码不一致</p>
+                    </div>
                     <div class="phone">
                         <p>手机号码</p>
                         <p class="clearfix"><button>+86</button> <input placeholder="请输入手机号码" type="text" name="phone"></p>
@@ -52,6 +63,9 @@
                sendAjax('php/login.php',{
                    type:'POST',
                    data:{
+                       username:$form_wrap['username'].value,
+                       pwd:$form_wrap['pwd'].value,
+                       affirmpwd:$form_wrap['affirmpwd'].value,
                        phone:$form_wrap['phone'].value
                    },
                    success(data){

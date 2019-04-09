@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/common.css">
+    <script src="js/animate7.0.js"></script>
+    <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -130,26 +132,28 @@ src="images/index/totop_hover.png" alt="">回顶部</a></div>
                 </nav>
                 <div class="slideshow">
                     <!-- 轮播的图片 -->
-                    <ul>
-                        <li style="z-index:5"><a href=""><img src="images/index/xmad_15540334249697_wutsB.jpg"
+                    <ul class="imgbox">
+                        <li style="z-index:5"><a href=""><img name="img" src="images/index/xmad_15540334249697_wutsB.jpg"
                                     alt=""></a></li>
-                        <li style="z-index:4"><a href=""><img src="images/index/xmad_15540285098231_tQAqK.jpg"
+                        <li style="z-index:4"><a href=""><img name="img" src="images/index/xmad_15540285098231_tQAqK.jpg"
                                     alt=""></a></li>
-                        <li style="z-index:3"><a href=""><img src="images/index/xmad_15540284814139_iOXjM.jpg"
+                        <li style="z-index:3"><a href=""><img name="img" src="images/index/xmad_15540284814139_iOXjM.jpg"
                                     alt=""></a></li>
-                        <li style="z-index:2"><a href=""><img src="images/index/xmad_15540157344307_uYqnE.jpg"
+                        <li style="z-index:2"><a href=""><img name="img" src="images/index/xmad_15540157344307_uYqnE.jpg"
                                     alt=""></a></li>
-                        <li style="z-index:1"><a href=""><img src="images/index/xmad_15540348042397_QBCyx.jpg"
+                        <li style="z-index:1"><a href=""><img name="img" src="images/index/xmad_15540348042397_QBCyx.jpg"
                                     alt=""></a></li>
                     </ul>
                     <!-- 轮播的索引 -->
-                    <ol>
+                    <ol id="imgIndex">
                         <li class="f08"></li>
                         <li></li>
                         <li></li>
                         <li></li>
                         <li></li>
                     </ol>
+                    <button class="show_left icon-slides"></button>
+                    <button class="show_right icon-slides"></button>
                 </div>
             </div>
             <!-- 轮播图的下面 -->

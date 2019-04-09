@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/register.css">
 </head>
+
 <body>
     <!-- 头部 -->
     <section id="header_wrap">
@@ -17,9 +19,9 @@
             </div>
         </section>
     </section>
-    <div class="banner">
+    <!-- <div class="banner">
             <img class="img" src="images/register/banner.jpg" alt="">
-    </div>
+    </div> -->
     <!-- 表单 -->
     <section id="register_wrap">
         <section class="register content clearfix">
@@ -30,9 +32,9 @@
                     <a href="" class="right">扫码登录</a>
                 </div>
                 <div class="regInp">
-                    <form action="">
-                        <input type="text" placeholder="邮箱/手机号码/小米ID">
-                        <input type="password" placeholder="密码">
+                    <form action="" class="form_wrap">
+                        <input type="text" name="username" placeholder="邮箱/手机号码/小米ID">
+                        <input type="password" name="pwd" placeholder="密码">
                         <input type="button" class="btn" value="登录">
                         <p class="clearfix">
                             <span><a href="">手机短信登录/注册</a></span>
@@ -66,31 +68,60 @@
         <p>
             <a href="">简体</a> | <a href="">繁体</a> | <a href="">English</a> | <a href="">常见问题</a> | <a href="">隐私政策</a>
         </p>
-        <p>小米公司版权所有-京ICP备10046444-<img src="images/register/ghs.png"alt=""> 京公网安备11010802020134号-京ICP证110507号</p>
+        <p>小米公司版权所有-京ICP备10046444-<img src="images/register/ghs.png" alt=""> 京公网安备11010802020134号-京ICP证110507号</p>
     </footer>
     <script src="js/ajax.js"></script>
     <script>
-        //    var $form_wrap = document.querySelector('.form_wrap');
-        //    var $ze = document.querySelector('.ze');
-        //    $ze.onclick = function(e){
-        //        e = e || event;
-        //        e.preventDefault();
-        //        sendAjax('php/login.php',{
-        //            type:'POST',
-        //            data:{
-        //                phone:$form_wrap['phone'].value
-        //            },
-        //            success(data){
-        //                console.log(data);
-        //                let {code,msg} = JSON.parse(data);
-        //                if(code == 200){
-        //                 //    locatlon.href = 'xxx.html'
-        //                }else{
-        //                    alert(msg);
-        //                }
-        //            }
-        //        })
-        //    }
+        class Reg {
+            constructor() {
+                this.form = document.querySelector('.form_wrap');
+                this.user = this.form['username'];
+                this.pwd = this.form['pwd'];
+            }
+            init() {
+               this.ajax();
+               this.ister();
+            }
+            ister(){
+                this.user.onfocus = function(){
+                    
+                }
+            }
+            ajax() {
+                var $form_wrap = document.querySelector('.form_wrap');
+                var $btn = document.querySelector('.btn');
+                $btn.onclick = function (e) {
+                    e = e || event;
+                    e.preventDefault();
+                    sendAjax('php/register.php', {
+                        type: 'POST',
+                        data: {
+                            username: $form_wrap['username'].value,
+                            pwd: $form_wrap['pwd'].value,
+                        },
+                        success(data) {
+                            console.log(data);
+                            let {
+                                code,
+                                msg,
+                                data: _data
+                            } = JSON.parse(data);
+                            if (code == 200) {
+                                //    var username = _data.name;
+                                localStorage.name = _data.name;
+                                location.href = 'wo.html?name=' + localStorage.name;
+                            } else {
+                                alert(msg);
+                            }
+                        }
+                    })
+                }
+            }
+        }
+        window.onload = function(){
+            new Reg().init();
+        }
     </script>
 </body>
+
 </html>

@@ -1,0 +1,91 @@
+.content{
+    width:1226px;
+    margin:0 auto;
+}
+
+#header_wrap{
+    height:100px;
+    background:#fff;
+    border-bottom:2px solid #ff6700;
+}
+.hea_logo{
+    float:left;
+    margin-top:26px;
+}
+.hea_logo img{
+    width:48px;
+    height:48px;
+    float:left;
+}
+.hea_logo h1{
+    font-size:30px;
+    color:#424242;
+    float:left;
+    margin-left:45px;
+}
+.hea_logo h1 span{
+    font-size:14px;
+    color:#757575;
+    margin-left:15px;
+}
+.reg-box{
+    float:right;
+    line-height:100px;
+}
+
+/* 主体 */
+#main_wrap{
+    height:562px;
+}
+.main{
+    height:562px;
+    background:#fff;
+    margin-top:36px;
+}
+/* 标题 */
+.shop-title{
+    height:70px;
+    border-bottom:1px solid #e0e0e0;
+}
+.shop-xq{
+    height:499px;
+}
+/* 结算 */
+.close{
+    height:50px;
+    background:#fff;
+    margin-top:20px;
+}
+.close p:nth-child(1){
+    float:left;
+    line-height:50px;
+    margin-left:30px;
+    font-size:12px;
+    color:#333;
+}
+.close p:nth-child(1) a{
+    margin-right:36px;
+}
+.close p:nth-child(1) a{
+    margin-right:36px;
+}
+.close div:nth-child(2){
+    float:right;
+}
+.close .js{
+    width:202px;
+    height:50px;
+    outline:none;
+    background:#ff6700;
+    border:none;
+    color:#fff;
+    font-size:14px;
+    margin-left:50px;
+}
+.close_right p{
+    color:#ff6700;
+}
+.close_right p span{
+    color:#ff6700;
+    font-size:26px;
+}
