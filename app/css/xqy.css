@@ -40,16 +40,86 @@ main{
     background:#fff;
     height:100%;
 }
-.xm8_left{
+.xm8_left_box{
     float:left;
 }
-.xm8_left img{
+.xm8_left{
    width:560px;
    height:560px;
+   position: relative;
+   border: 1px solid #000;
+}
+.xm8Index{
+    width:560px;
+    height:100px;
+    border: 1px solid #000;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    border-top:none;
+}
+.xm8Index li{
+    width:120px;
+    height:80px;
+    border: 1px solid #000;
+}
+.xm8Index .ffo{
+    border:#ff4a00 solid 1px;
+}
+.xm8Index li:nth-child(1){
+    background:url(../images/detailPage/pms_1538019355.46916163.jpg) no-repeat;
+    background-size:100%;
+}
+.xm8Index li:nth-child(2){
+    background:url(../images/detailPage/pms_1538019047.70813196.png) no-repeat;
+    background-size:100%;
+}
+.xm8Index li:nth-child(3){
+    background:url(../images/detailPage/pms_1538019047.66061297.png) no-repeat;
+    background-size:100%;
+}
+.xm8Index li:nth-child(4){
+    background:url(../images/detailPage/pms_1538019047.53882074.png) no-repeat;
+    background-size:100%;
+}
+.xm8_left .samll{
+    position: relative;
+    height:560px;
+}
+.xm8_left .smallImg{
+    width:560px;
+    height:560px;
+}
+.xm8_left .bigImg{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.xm8_left .mask{
+    width: 175px;
+    height: 175px;
+    background: paleturquoise;
+    position: absolute;
+    left:0;
+    top: 0;
+    opacity: 0.3;
+    display: none;
+    cursor: move;
+}
+.xm8_left .big{
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    top:80px;
+    left : 560px;
+    border: 1px solid #000;
+    background:#fff;
+    /* display: none; */
 }
 /* 小米8介绍 */
 .xm8_right{
-    float:left;
+    float:right;
 }
 .xm-title{
     width:610px;
