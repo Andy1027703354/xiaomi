@@ -115,7 +115,7 @@ main{
     left : 560px;
     border: 1px solid #000;
     background:#fff;
-    /* display: none; */
+    display: none;
 }
 /* 小米8介绍 */
 .xm8_right{
@@ -142,6 +142,11 @@ main{
 }
 .xm-title p:nth-child(3){
     font-size:12px;
+    color:#ff4a00;
+    line-height:28px;
+}
+.xm-title p:nth-child(4) .units{
+    font-size:14px;
     color:#ff4a00;
     line-height:28px;
 }
@@ -266,6 +271,95 @@ main{
 .add p span{
     margin:0 24px;
     font-size:12px;
+}
+/* 商品详情 */
+.xm8sj{
+    height:116px;
+    background:#fff;
+    line-height:116px;
+    position:relative;
+    float:left;
+}
+.che{
+    margin-left:36px;
+    width:20px;
+    height:20px;
+}
+.xm8img-box{
+    display:inline-block;
+    width:80px;
+    height:80px;
+    position:absolute;
+    top:15px;
+    left:120px;
+}
+.xm8pm{
+    margin-left:180px;
+    font-size:16px;
+}
+.xm8img{
+    width:80px;
+    height:80px;
+}
+.jiajian{
+    display:inline-block;
+    position:relative;
+    top:10px;
+    margin-left:60px;
+}
+.j-box{
+    float:left;
+}
+.count{
+    width:74px;
+    height:34px;
+    border:1px solid #e0e0e0;
+}
+.jia{
+    width:40px;
+    height:36px;
+    border:1px solid #e0e0e0;
+    outline:none;
+    background:#fff;
+    border-left:none;
+    font-size:24px;
+}
+.jian{
+    width:40px;
+    height:36px;
+    border:1px solid #e0e0e0;
+    outline:none;
+    background:#fff;
+    border-right:none;
+    font-size:24px;
+}
+.jian:hover{
+    background:#e0e0e0;
+}
+.jia:hover{
+    background:#e0e0e0;
+}
+.unit{
+    color:#333;
+    font-size:14px;
+    margin-left:130px;
+}
+.subtotal{
+    color:#ff6700;
+    font-size:16px;
+    margin-left:40px;
+}
+.dele{
+    width:20px;
+    height:20px;
+    outline:none;
+    border:none;
+    border-radius:50%;
+    margin-left:116px;
+}
+.dele:hover{
+    background:red;
+    color:#fff;
 }
 .pri{
     margin-bottom:50px;

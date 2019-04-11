@@ -1,0 +1,13 @@
+{
+    "code": 200,
+    "data": [{
+            "id": 1,
+            "img": "images/detailPage/pms_1538019355.46916163.jpg",
+            "name": "小米8 屏幕指纹版",
+            "price": 2699,
+            "ramer":"8GB",
+            "memory":"128GB",
+            "color":"透明"
+        }
+    ]
+}

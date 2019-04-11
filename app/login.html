@@ -27,59 +27,200 @@
                     </div>
                     <div class="user">
                         <p class="hei">用 户 名</p>
-                        <input type="text" name="username">
-                        <p class="red none-1">用户名不合法</p>
-                        <p class="hei">密    码</p>
+                        <input type="text" name="username" autocomplete="off">
+                        <p class="red none-1">用户名不合法，请正确输入</p>
+                        <p class="none-a" style="color:blue;font-size:12px;display:none">请输入用户名，只能是2-14位的中文、大小字母和数字组成
+                        </p>
+                        <p class="hei">密 码</p>
                         <input type="password" name="pwd">
-                        <p class="red none-2">密码不合法</p>
+                        <p class="red none-2">密码不合法，请正确输入</p>
+                        <p class="none-b" style="color:blue;font-size:12px;display:none">请输入密码，只能是6-16位的大小字母和数字组成</p>
                         <p class="hei">确认密码</p>
                         <input type="password" name="affirmpwd">
                         <p class="red none-3">密码不一致</p>
+                        <p class="none-c" style="color:blue;font-size:12px;display:none">确认密码</p>
                     </div>
                     <div class="phone">
                         <p>手机号码</p>
-                        <p class="clearfix"><button>+86</button> <input placeholder="请输入手机号码" type="text" name="phone"></p>
-                        <p class="ne"><img class="w_img" src="images/login/w.jpg" alt=""> 请输入手机号码</p>
+                        <p class="clearfix"><button>+86</button> <input autocomplete="off" placeholder="请输入手机号码"
+                                type="text" name="phone">
+                        </p>
+                        <p class="none-d" style="color:red;font-size:12px;display:none">号码错误</p>
+                        <p class="ne"><img class="w_img" src="images/login/w.jpg" alt="">请输入手机号码</p>
                     </div>
                     <input class="ze" type="button" value="立即注册">
                 </form>
-                <p class="user_xy"><img class="g_img" src="images/login/g.jpg" alt=""> 注册帐号即表示您同意并愿意遵守小米 <span>用户协议</span>和 <span> 隐私政策</span></p>
+                <p class="user_xy"><img class="g_img" src="images/login/g.jpg" alt=""> 注册帐号即表示您同意并愿意遵守小米
+                    <span>用户协议</span>和 <span> 隐私政策</span></p>
             </div>
         </section>
     </section>
     <div class="foo">
-            <p>
-                <a href="">简体</a> | <a href="">繁体</a> | <a href="">English</a> | <a href="">常见问题</a>
-            </p>
-            <p>小米公司版权所有-京ICP备10046444- <img src="images/login/ghs.png" alt=""> 京公网安备11010802020134号-京ICP证110507号</p>
+        <p>
+            <a href="">简体</a> | <a href="">繁体</a> | <a href="">English</a> | <a href="">常见问题</a>
+        </p>
+        <p>小米公司版权所有-京ICP备10046444- <img src="images/login/ghs.png" alt=""> 京公网安备11010802020134号-京ICP证110507号</p>
     </div>
     <script src="js/ajax.js"></script>
     <script>
-           var $form_wrap = document.querySelector('.form_wrap');
-           var $ze = document.querySelector('.ze');
-           $ze.onclick = function(e){
-               e = e || event;
-               e.preventDefault();
-               sendAjax('php/login.php',{
-                   type:'POST',
-                   data:{
-                       username:$form_wrap['username'].value,
-                       pwd:$form_wrap['pwd'].value,
-                       affirmpwd:$form_wrap['affirmpwd'].value,
-                       phone:$form_wrap['phone'].value
-                   },
-                   success(data){
-                       console.log(data);
-                       let {code,msg} = JSON.parse(data);
-                       if(code == 200){
-                            location.href = 'wo.html'
-                           alert('注册成功')
-                       }else{
-                           alert(msg);
-                       }
-                   }
-               })
-           }
+        class ZE {
+            constructor() {
+                this.form = document.querySelector('.form_wrap')
+                this.user = this.form['username'];
+                this.pwd = this.form['pwd'];
+                this.affirmpwd = this.form['affirmpwd'];
+                this.phone = this.form['phone'];
+                this.userFlag = false;
+                this.pwdFlag = false;
+                this.aFlag = false;
+                this.phoneFlag = false;
+                this.none_a = document.querySelector('.none-a');
+                this.none_b = document.querySelector('.none-b');
+                this.none_c = document.querySelector('.none-c');
+                this.ne = document.querySelector('.ne');
+                this.none_1 = document.querySelector('.none-1');
+                this.none_2 = document.querySelector('.none-2');
+                this.none_3 = document.querySelector('.none-3');
+                this.none_d = document.querySelector('.none-d');
+                this.ze = document.querySelector('.ze');
+            }
+            init() {
+                this.ajax();
+                this.ister();
+            }
+            ister() {
+                var _this = this;
+                var uNameReg = /^([\u4e00-\u9fa5]|[a-zA-Z0-9]){2,14}$/;
+                var pwdReg = /^[a-zA-Z0-9]{6,16}$/;
+                var phoneReg = /^1[34578]\d{9}$/;
+                this.user.onfocus = function () {
+                    _this.none_a.style.display = 'block';
+                    _this.none_1.style.display = 'none';
+                }
+
+                this.user.onblur = function () {
+                    _this.none_a.style.display = "none";
+                    if (checkUserName()) {
+                        _this.userFlag = true;
+
+                    } else {
+                        _this.none_1.style.display = "block";
+                    }
+                }
+
+                function checkUserName() {
+                    var uVal = _this.user.value;
+                    if (uNameReg.test(uVal)) {
+                        return true;
+                    }
+                    return false;
+                }
+
+                this.pwd.onfocus = function () {
+                    _this.none_b.style.display = "block";
+                    _this.none_2.style.display = "none";
+                }
+                this.pwd.onblur = function () {
+                    _this.none_b.style.display = "none";
+
+                    if (checkPwd()) {
+                        _this.aFlag = true;
+                    } else {
+                        _this.none_2.style.display = "block";
+                    }
+                }
+
+                function checkPwd() {
+                    var pVal = _this.pwd.value;
+                    if (pwdReg.test(pVal)) {
+                        return true;
+                    }
+                    return false;
+
+                }
+
+
+                this.affirmpwd.onfocus = function () {
+                    _this.none_c.style.display = "block";
+                    _this.none_3.style.display = "none";
+                }
+                this.affirmpwd.onblur = function () {
+                    _this.none_c.style.display = "none";
+
+                    if (checkAffirmpwd()) {
+                        _this.aFlag = true;
+                    } else {
+                        _this.none_3.style.display = "block";
+                    }
+                }
+
+                function checkAffirmpwd() {
+                    var aVal = _this.affirmpwd.value;
+                    if (pwdReg.test(aVal) === pwdReg.test(_this.pwd.value)) {
+                        return true;
+                    }
+                    return false;
+                }
+
+                this.phone.onfocus = function () {
+                    _this.ne.style.display = "block";
+                    _this.none_d.style.display = "none";
+                }
+                this.phone.onblur = function () {
+                    _this.ne.style.display = "none";
+
+                    if (checkPhone()) {
+                        _this.phoneFlag = true;
+                    } else {
+                        _this.none_d.style.display = "block";
+                    }
+                }
+
+                function checkPhone() {
+                    var oneVal = _this.phone.value;
+                    if (phoneReg.test(oneVal)) {
+                        return true;
+                    }
+                    return false;
+                }
+                 this.ze.onsubmit = function(){
+                     console.log(555)
+                 }
+            }
+            ajax() {
+                var $form_wrap = document.querySelector('.form_wrap');
+                var $ze = document.querySelector('.ze');
+                $ze.onclick = function (e) {
+                    e = e || event;
+                    e.preventDefault();
+                    sendAjax('php/login.php', {
+                        type: 'POST',
+                        data: {
+                            username: $form_wrap['username'].value,
+                            pwd: $form_wrap['pwd'].value,
+                            affirmpwd: $form_wrap['affirmpwd'].value,
+                            phone: $form_wrap['phone'].value
+                        },
+                        success(data) {
+                            console.log(data);
+                            let {
+                                code,
+                                msg
+                            } = JSON.parse(data);
+                            if (code == 200) {
+                                location.href = 'register.html'
+                                alert('注册成功')
+                            } else {
+                                alert(msg);
+                            }
+                        }
+                    })
+                }
+            }
+        }
+        window.onload = function () {
+            new ZE().init();
+        }
     </script>
 </body>
 

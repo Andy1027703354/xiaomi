@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/xqy.css">
+    <script src="js/ajax.js"></script>
+    
 </head>
 
 <body>
@@ -113,6 +115,7 @@
                         this.mask = this.xmLeft.querySelector('.mask');
                         this.big = this.xmLeft.querySelector('.big');
                         this.bigImg = this.xmLeft.querySelector('.bigImg');
+                        this.big.style.display = 'none';
                     }
                     init() {
                         this.event();
@@ -127,7 +130,7 @@
                             _this.mask.style.display = "none";
                             _this.big.style.display = "none";
                         }
-                        _this.big.onmouseenter = function(){
+                        _this.big.onmouseenter = function () {
                             _this.mask.style.display = "none";
                             _this.big.style.display = "none";
                         }
@@ -143,38 +146,40 @@
                             _this.mask.style.top = t + "px";
                             _this.bigImg.style.left = -(_this.bigImg.clientWidth / this.clientWidth) * l + "px";
                             _this.bigImg.style.top = -(_this.bigImg.clientHeight / this.clientHeight) * t +
-                            "px";
+                                "px";
                         }
                     }
                 }
-                class Lubo{
+                class Lubo {
                     constructor() {
                         this.xmIndex = document.querySelector('.xm8Index');
                         this.samllImg = document.querySelector('.smallImg');
                         this.all = this.xmIndex.children;
                         this.bigImg = document.querySelector('.bigImg');
-                        this.img = ['pms_1538019355.46916163.jpg','pms_1538019047.70813196.png','pms_1538019047.66061297.png','pms_1538019047.53882074.png'];
+                        this.img = ['pms_1538019355.46916163.jpg', 'pms_1538019047.70813196.png',
+                            'pms_1538019047.66061297.png', 'pms_1538019047.53882074.png'
+                        ];
                         this.count = 0;
                         this.all = this.xmIndex.children;
-                        for(var i=0;i<this.all.length;i++){
+                        for (var i = 0; i < this.all.length; i++) {
                             this.all[i].index = i;
                         }
                     }
-                    event(){
+                    event() {
                         var _this = this;
-                        _this.xmIndex.onclick = (e)=>{
-                             e = e || event;
-                             var target = e.target || e.srcElement;
-                             if(target.nodeName === 'LI'){
+                        _this.xmIndex.onclick = (e) => {
+                            e = e || event;
+                            var target = e.target || e.srcElement;
+                            if (target.nodeName === 'LI') {
                                 _this.count = target.index;
-                                _this.samllImg.src = 'images/detailPage/'+_this.img[_this.count];
-                                _this.bigImg.src = 'images/detailPage/'+_this.img[_this.count];
-                                for(var i=0;i<_this.all.length;i++){
+                                _this.samllImg.src = 'images/detailPage/' + _this.img[_this.count];
+                                _this.bigImg.src = 'images/detailPage/' + _this.img[_this.count];
+                                for (var i = 0; i < _this.all.length; i++) {
                                     _this.all[i].className = '';
                                 }
-                             }
-                             _this.all[_this.count].className = 'ffo';
-        
+                            }
+                            _this.all[_this.count].className = 'ffo';
+
                         }
                     }
                 }
@@ -183,13 +188,14 @@
                     new Lubo().event();
                 }
             </script>
+            
             <div class="xm8_right">
                 <div class="xm-title">
-                    <h1>小米8 屏幕指纹版</h1>
+                    <h1 class="xff">小米8 屏幕指纹版</h1>
                     <p><span>「米粉节热卖中，8GB+128GB立省200元，到手价2699元，加199元得小米AI音箱」</span>全球首款压感屏幕指纹，快速解锁 / 骁龙845处理器，全面提升游戏性能表现
                         / 四曲面渐变镜面机身，轻薄圆润 / 960帧超慢动作 / 手持超级夜景</p>
                     <p>小米自营</p>
-                    <p>2699元 <del><span>3399元</span></del></p>
+                    <p><span class="units">100</span>元 <del><span>3399元</span></del></p>
                 </div>
                 <div class="com">
                     <p><span>赠品</span>赠送标准高透贴膜</p>
@@ -202,15 +208,15 @@
                 <!-- 选择版本 -->
                 <div class="versions">
                     <h3 class="h3">选择版本</h3>
-                    <p><a href="" class="select ff6700">8GB+128GB<span class="price rgb75">2699元</span></a><a href=""
+                    <p><a href="" class="select ff6700"><em class="ramer">8GB</em>+<em class="memory">128GB</em> <span class="price rgb75">2699元</span></a><a href=""
                             class="select">6GB+128GB<span class="price">2499元</span></a></p>
                 </div>
                 <!-- 选择颜色 -->
                 <div class="color">
                     <h3 class="h3">选择颜色</h3>
-                    <p><a href="" class="select ff6700">透明</a><a href="" class="select">暮光金</a></p>
+                    <p><a href="" class="select ff6700 lucency">透明</a><a href="" class="select">暮光金</a></p>
                 </div>
-                <div class="lengthen">
+                <!-- <div class="lengthen">
                     <p><span>选择小米提供的意外保护</span><a href="">了解意外保护 ></a></p>
                     <div class="leng">
 
@@ -226,12 +232,25 @@
                     </div>
                 </div>
                 <div class="total">
-                </div>
-                <div class="add">
+                </div> -->
+                <div class="add" style="margin-top:100px">
                     <button class="addCart">加入购物车</button><button class="like">喜欢</button>
-                    <p><span>小米自营</span><span>小米发货</span><span>7天无理由退货</span><span>运费说明</span><span>售后服务政策</span></p>
-                </div>
+                    <p style="margin-top:100px"><span>小米自营</span><span>小米发货</span><span>7天无理由退货</span><span>运费说明</span><span>售后服务政策</span></p>
+                </div> 
             </div>
+            <!-- <div class="xm8sj">
+                <input type="checkbox" class="che">
+                <a href="" class="xm8img-box"><img class="xm8img" src="images/detailPage/pms_1538019355.46916163.jpg" alt=""></a>
+                <a href="" class="xm8pm">小米8 屏幕指纹版 8GB内存 透明 128GB</a>
+                <span class="unit">2699元</span>
+                <p class="jiajian">
+                    <button class="jian j-box">-</button>
+                    <input type="text" class="count j-box">
+                    <button class="jia j-box">+</button>
+                </p>
+                <span class="subtotal">2699元</span>
+                <button class="dele">X</button>
+            </div> -->
         </section>
     </main>
     <div class="pri content">
@@ -240,8 +259,7 @@
             <img src="images/detailPage/a482afa34053b1b32ece1023475af7fb.jpg" alt="">
         </div>
     </div>
-
-
+    
     <!-- 网页底部 -->
     <footer id="footer">
         <!-- 网页底部上部分 -->
@@ -388,6 +406,7 @@
                     </div>
                 </section>
     </footer>
+    <script src="js/shop.js"></script>
 </body>
 
 </html>
