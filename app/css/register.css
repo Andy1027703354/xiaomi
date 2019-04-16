@@ -45,7 +45,7 @@ html,body{
 .regForm .tabs a{
     font-size:24px;
 }
-.regForm .tabs a:nth-child(1){
+.regForm .tabs .f56{
     color:#f56600;
 }
 .regForm .tabs span:nth-child(2){

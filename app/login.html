@@ -183,13 +183,12 @@
                     }
                     return false;
                 }
-                 this.ze.onsubmit = function(){
-                     console.log(555)
-                 }
+                 
             }
             ajax() {
                 var $form_wrap = document.querySelector('.form_wrap');
                 var $ze = document.querySelector('.ze');
+                var _this = this;
                 $ze.onclick = function (e) {
                     e = e || event;
                     e.preventDefault();

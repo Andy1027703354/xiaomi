@@ -515,6 +515,9 @@
     color:#424242;
     margin-left:28px;
 }
+.appliance_title p .fab{
+    color:#ff6700;
+}
 .appliance .appliance_img{
     height:616px;
 }

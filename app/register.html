@@ -27,7 +27,7 @@
         <section class="register content clearfix">
             <div class="regForm">
                 <div class="tabs">
-                    <a href="" class="left">账号登录</a>
+                    <a href="" class="left f56">账号登录</a>
                     <span></span>
                     <a href="" class="right">扫码登录</a>
                 </div>
@@ -76,6 +76,36 @@
     </footer>
     <script src="js/ajax.js"></script>
     <script>
+        class None{
+            constructor(){
+                this.left = document.querySelector('.left');
+                this.right = document.querySelector('.right');
+                this.saoma = document.querySelector('.saoma')
+                this.regInp = document.querySelector('.regInp')
+            }
+            event(){
+                var _this= this;
+                this.right.onclick = function(e){
+                    e = e || event;
+                    e.stopPropagation();
+                    e.preventDefault();
+                    _this.regInp.style.display = 'none';
+                    _this.saoma.style.display = 'block';
+                    _this.left.className = '';
+                    _this.right.className = 'f56';
+                }
+                var _this= this;
+                this.left.onclick = function(e){
+                    e = e || event;
+                    e.stopPropagation();
+                    e.preventDefault();
+                    _this.regInp.style.display = 'block';
+                    _this.saoma.style.display = 'none';
+                    _this.left.className = 'f56';
+                    _this.right.className = '';
+                }
+            }
+        }
         class Reg {
             constructor() {
                 this.form = document.querySelector('.form_wrap');
@@ -183,6 +213,7 @@
         }
         window.onload = function(){
             new Reg().init();
+            new None().event();
         }
     </script>
 </body>

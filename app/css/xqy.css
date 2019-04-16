@@ -238,16 +238,42 @@ main{
     font-size:14px;
     color:#b0b0b0;
 }
+
 .leng{
     width:604px;
     height:138px;
     border:1px solid #e0e0e0;
 }
+.leng a{
+    display:flex;
+    width:504px;
+    height:138px;
+    flex-direction:column;
+    justify-content:center;
+    padding-left:100px;
+}
+.leng a p:nth-child(1){
+    font-size:18px;
+    color:#ff6700;
+}
+.leng a p:nth-child(2){
+    font-size:14px;
+    color:#b5b5b5;
+    margin:10px 0;
+}
 .total{
-    width:604px;
+    width:564px;
     height:138px;
     background:#f9f9fa;
     margin:30px 0;
+    overflow:hidden;
+    padding:0 20px;
+}
+.total p:nth-child(1){
+    margin-top:34px;
+}
+.total p:nth-child(2){
+    margin-top:20px;
 }
 .addCart{
     width:300px;
@@ -258,6 +284,7 @@ main{
     color:#fff;
     font-size:14px;
 }
+
 .like{
     width:142px;
     height:54px;
@@ -272,6 +299,8 @@ main{
     margin:0 24px;
     font-size:12px;
 }
+
+
 /* 商品详情 */
 .xm8sj{
     height:116px;

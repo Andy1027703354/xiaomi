@@ -79,7 +79,7 @@ class Banner{
          self.timer = setInterval(function(){
              self.index++
              self.showImg();
-         },3000)
+         },2000)
      }
       move(ele, attr, target, time=1000, callback) {
         // 获取非行内样式
